@@ -1,0 +1,9 @@
+package com.gestionhotel.sejour.vo;
+
+
+import com.gestionhotel.sejour.bean.Secteur;
+
+public interface SecteurServiceVo  {
+
+	public int save(Secteur secteur);
+}

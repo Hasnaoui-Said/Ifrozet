@@ -1,0 +1,32 @@
+package com.gestionhotel.sejour.service;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.gestionhotel.sejour.bean.Quartier;
+import com.gestionhotel.sejour.bean.Secteur;
+import com.gestionhotel.sejour.bean.SecteurQuartier;
+import com.gestionhotel.sejour.dao.SecteurDao;
+import com.gestionhotel.sejour.vo.QuartierServiceVo;
+import com.gestionhotel.sejour.vo.SecteurServiceVo;
+
+@Service
+public class SecteurQuartierService {
+
+	public void save(Secteur secteur, List<SecteurQuartier> secteurQuartiers) {
+		for (SecteurQuartier secteurQuartier : secteurQuartiers) {
+			secteurQuartier.setSecteur(secteur);
+			secteurQuartier.
+		}
+	}
+
+	
+	@Autowired
+	private SecteurQuartierDao secteurQuartierDao;
+	
+
+}

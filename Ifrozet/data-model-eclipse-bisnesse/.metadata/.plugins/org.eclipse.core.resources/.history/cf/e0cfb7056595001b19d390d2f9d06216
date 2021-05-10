@@ -1,0 +1,33 @@
+package com.example.projet.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.projet.bean.Secteur;
+import com.example.projet.bean.SecteurQuartier;
+import com.example.projet.dao.SecteurDao;
+import com.example.projet.dao.SecteurQuartierDao;
+
+@Service
+public class SecteurQuartierService {
+
+	@Autowired
+	private SecteurQuartierDao secteurQuartierDao;
+	@Autowired
+	private QuartierService quartierService;
+	
+	
+	public void save(Secteur secteur, List<SecteurQuartier> secteurQuartiers) {
+		for (SecteurQuartier secteurQuartier : secteurQuartiers) {
+			secteurQuartier.setSecteur(secteur);
+			if(secteurQuartier.getQuartier()!=null&&secteurQuartier.getQuartier().getReference()!=null) {
+				secteurQuartier.setQuartier(quartierService.findByReference(secteurQuartier.getQuartier().getReference()));
+			}
+			secteurQuartierDao.save(secteurQuartier);
+		}		
+	}
+
+
+}

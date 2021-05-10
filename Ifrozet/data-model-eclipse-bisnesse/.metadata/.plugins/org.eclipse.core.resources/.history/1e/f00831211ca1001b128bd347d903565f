@@ -1,0 +1,61 @@
+package com.example.projet.bean;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+@Entity
+public class Employe {
+
+	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
+	
+	private long id;
+	private String reference;
+	private double salaireActuel;
+	@OneToOne
+	private Echelon echelon;
+	@OneToOne
+	private Echelon echelonSuivant;
+	private long nombreMoisExperienceActue;
+	
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public String getReference() {
+		return reference;
+	}
+	public void setReference(String reference) {
+		this.reference = reference;
+	}
+	public double getSalaireActuel() {
+		return salaireActuel;
+	}
+	public void setSalaireActuel(double salaireActuel) {
+		this.salaireActuel = salaireActuel;
+	}
+	public Echelon getEchelon() {
+		return echelon;
+	}
+	public void setEchelon(Echelon echelon) {
+		this.echelon = echelon;
+	}
+	public Echelon getEchelonSuivant() {
+		return echelonSuivant;
+	}
+	public void setEchelonSuivant(Echelon echelonSuivant) {
+		this.echelonSuivant = echelonSuivant;
+	}
+	public long getNombreMoisExperienceActue() {
+		return nombreMoisExperienceActue;
+	}
+	public void setNombreMoisExperienceActue(long nombreMoisExperienceActue) {
+		this.nombreMoisExperienceActue = nombreMoisExperienceActue;
+	}
+	
+	
+}

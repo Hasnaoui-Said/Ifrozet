@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;CommandeWs.java&apos; to &apos;commande-v1/src/main/java/com.example.projet.ws&apos;&#x0D;&#x0A;- Original project: &apos;commande-v1&apos;&#x0D;&#x0A;- Destination element: &apos;commande-v1/src/main/java/com.example.projet.ws&apos;&#x0D;&#x0A;- Original element: &apos;com.example.projet.ws.CommandeWs.java&apos;" description="Copy compilation unit" destination="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.projet.ws" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.projet.ws{CommandeWs.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1617556774314" units="1" version="1.0"/>
+</session>

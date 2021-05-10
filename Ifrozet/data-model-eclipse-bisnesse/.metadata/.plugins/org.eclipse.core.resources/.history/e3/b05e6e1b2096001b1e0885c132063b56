@@ -1,0 +1,192 @@
+package com.gestionhotel.sejour.service;
+
+import java.util.List;
+
+<<<<<<< HEAD
+import javax.transaction.Transactional;
+
+=======
+import com.gestionhotel.sejour.bean.*;
+>>>>>>> branch 'master' of https://github.com/ayoubfarid/TaxSejour.git
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+<<<<<<< HEAD
+import com.gestionhotel.sejour.bean.Categorie;
+import com.gestionhotel.sejour.bean.Locale;
+import com.gestionhotel.sejour.bean.Quartier;
+import com.gestionhotel.sejour.bean.Redevable;
+import com.gestionhotel.sejour.bean.Secteur;
+=======
+>>>>>>> branch 'master' of https://github.com/ayoubfarid/TaxSejour.git
+import com.gestionhotel.sejour.dao.LocaleDao;
+import com.gestionhotel.sejour.vo.LocaleServiceVo;
+
+@Service
+public class LocaleService implements LocaleServiceVo{
+
+	@Autowired
+	private LocaleDao localeDao;
+	@Autowired
+	private LocaleService localeService;
+	@Autowired
+	private QuartierService quartierService;
+
+	@Transactional
+	public int deleteByQuartierReference(String ref) {
+		return localeDao.deleteByQuartierReference(ref);
+	}
+
+	public List<Locale> findByQuartierReference(String ref) {
+		return localeDao.findByQuartierReference(ref);
+	}
+	public List<Locale> findByRedevableRef(String redevable) {
+		return localeDao.findByRedevableRef(redevable);
+	}
+
+	public Locale getOne(Long id) {
+		return localeDao.getOne(id);
+	}
+
+	@Autowired 
+	private TaxeSejoureService  taxeSejourService;
+
+	public Locale findAllByRedevableRef(String ref) {
+		return localeDao.findAllByRedevableRef(ref);
+	}
+
+	public int deleteByRedevableRef(String ref) {
+		return localeDao.deleteByRedevableRef(ref);
+	}
+
+
+
+	public List<Locale> findByRedevable(String refRe) {
+		return localeDao.findByRedevableRef(refRe);
+	}
+
+	public List<Locale> findByCategorieRef(String refCat) {
+		return localeDao.findByCategorieRef(refCat);
+	}
+
+
+
+	public List<Locale> findAll() {
+		return localeDao.findAll();
+	}
+	@Autowired 
+	RedevableService redevableservice;
+<<<<<<< HEAD
+
+=======
+	@Autowired
+	SecteurService secteurrservice;
+>>>>>>> branch 'master' of https://github.com/ayoubfarid/TaxSejour.git
+	@Autowired 
+	CategorieService categorieservice;
+<<<<<<< HEAD
+	public int save(Locale locale) {
+		Locale monlocale = findByReference(locale.getReference());
+=======
+	public int save(String ref,String red,String ca,String sec , List<TaxeSejour> taxessejour) {
+		   Redevable r=redevableservice.findByRef(red);
+		   Categorie c=categorieservice.findByRef(ca);
+		   Secteur s=secteurrservice.findByReference(sec);
+		   Locale locale= new Locale();
+		   locale.setCategorie(c);
+		   locale.setRedevable(r);
+		   locale.setReference(ref);
+		   locale.setSecteur(s);
+		Locale monlocale = findByRef(locale.getReference());
+>>>>>>> branch 'master' of https://github.com/ayoubfarid/TaxSejour.git
+		Redevable redevable = redevableservice.findByRef(locale.getRedevable().getRef()) ;
+		Categorie categorie = categorieservice.findByRef(locale.getCategorie().getRef()) ;
+<<<<<<< HEAD
+		Quartier quartier = quartierService.findByReference(locale.getQuartier().getReference());
+		List<Locale> listlocales = localeService.findByQuartierReference(locale.getQuartier().getReference());
+
+		if (redevable == null && categorie == null && quartier == null) {
+=======
+
+		if(monlocale != null) {
+			monlocale.setReference(ref);
+			monlocale.setCategorie(c);
+			monlocale.setRedevable(r);
+			monlocale.setSecteur(s);
+			monlocale.setTaxessejour(taxessejour);
+>>>>>>> branch 'master' of https://github.com/ayoubfarid/TaxSejour.git
+			return -1;
+		}
+<<<<<<< HEAD
+		else{
+			int result = 1;
+			for (Locale locales : listlocales) {
+				if(locales.getReference().equals(locale.getReference())) {
+					result = -1;
+				}
+			}if(result == -1) return -2;
+			else{
+				locale.setRedevable(redevable);
+				locale.setCategorie(categorie);
+				locale.setQuartier(quartier);
+				localeDao.save(locale);
+				return 1;
+			}
+=======
+		if (redevable != null && categorie != null) {
+			locale.setRedevable(redevable);
+			locale.setCategorie(categorie);
+			localeDao.save(locale);
+			if (taxessejour==null) {
+				return -4;
+			}
+			else{
+				for (TaxeSejour t:taxessejour){
+					t.setLocale(locale);
+					taxeSejourService.save(t);
+				}
+			}
+			return 1;
+>>>>>>> branch 'master' of https://github.com/ayoubfarid/TaxSejour.git
+		}
+<<<<<<< HEAD
+=======
+		else{
+			return -2;
+		}
+
+>>>>>>> branch 'master' of https://github.com/ayoubfarid/TaxSejour.git
+	}
+
+
+	public int deleteByReference(String ref) {
+<<<<<<< HEAD
+		int x = taxeSejourService.deleteByLocaleReference(ref);
+		int y = localeDao.deleteByReference(ref);
+		return x+y ;
+=======
+		int deleteByLocaleReference= taxeSejourService.deleteByLocaleReference(ref);
+		int deleteByref=localeDao.deleteByReference(ref);
+		return deleteByref+deleteByLocaleReference;
+>>>>>>> branch 'master' of https://github.com/ayoubfarid/TaxSejour.git
+	}
+
+	public Locale findByReference(String ref) {
+		return localeDao.findByReference(ref);
+
+	}
+
+<<<<<<< HEAD
+	@Override
+	public int save(Quartier quartier, List<Locale> locales) {
+		for(Locale locale : locales) {
+			locale.setQuartier(quartier);
+			localeService.save(locale);
+		}
+
+		return 1;
+	}
+=======
+
+>>>>>>> branch 'master' of https://github.com/ayoubfarid/TaxSejour.git
+}

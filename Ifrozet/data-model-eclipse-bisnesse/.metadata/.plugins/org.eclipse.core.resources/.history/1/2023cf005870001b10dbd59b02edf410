@@ -1,0 +1,34 @@
+package fr.premiereTp.tp1.Service.Impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import fr.premiereTp.tp1.Service.CommandeService;
+import fr.premiereTp.tp1.bean.Commande;
+
+@Service
+public class CommandeServiceImpl implements CommandeService {
+
+	@Autowired
+	private CommandeDao commandeDao;
+	@Override
+	public Commande findbyRef(String ref) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void save(Commande commande) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Commande> findByAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

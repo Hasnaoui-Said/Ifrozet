@@ -1,0 +1,5 @@
+package fr.premiereTp.tp1.bean;
+
+public class commande {
+
+}

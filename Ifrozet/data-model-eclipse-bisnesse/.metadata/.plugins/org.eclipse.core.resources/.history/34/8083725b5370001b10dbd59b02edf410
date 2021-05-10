@@ -1,0 +1,10 @@
+package fr.premiereTp.tp1.Dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import fr.premiereTp.tp1.bean.Commande;
+
+public interface CmmandeDao extends JpaRepository<Commande, Long> {
+
+	public Commande findByRef(String ref);
+}

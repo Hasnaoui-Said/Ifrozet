@@ -1,0 +1,17 @@
+package com.gestionhotel.sejour.vo;
+
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.gestionhotel.sejour.bean.Quartier;
+import com.gestionhotel.sejour.bean.Secteur;
+
+@Service
+public interface QuartierServiceVo{
+	
+	public int save(Secteur secteur,List<Quartier> quartiers);
+	
+	
+}

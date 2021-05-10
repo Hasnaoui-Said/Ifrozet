@@ -1,0 +1,67 @@
+package com.example.projet.bean;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+@Entity
+public class Avancement {
+
+	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
+	private long id;
+	private String reference;
+	@OneToOne
+	private Employe employe;
+	@OneToOne
+	private Echelon ancienEchelon;
+	@OneToOne
+	private Echelon nouveuaEchelon;
+	private double auncienSalaire;
+	private double nouveuaSalaire;
+	
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public String getReference() {
+		return reference;
+	}
+	public void setReference(String reference) {
+		this.reference = reference;
+	}
+	public Employe getEmploye() {
+		return employe;
+	}
+	public void setEmploye(Employe employe) {
+		this.employe = employe;
+	}
+	public Echelon getAncienEchelon() {
+		return ancienEchelon;
+	}
+	public void setAncienEchelon(Echelon ancienEchelon) {
+		this.ancienEchelon = ancienEchelon;
+	}
+	public Echelon getNouveuaEchelon() {
+		return nouveuaEchelon;
+	}
+	public void setNouveuaEchelon(Echelon nouveuaEchelon) {
+		this.nouveuaEchelon = nouveuaEchelon;
+	}
+	public double getAuncienSalaire() {
+		return auncienSalaire;
+	}
+	public void setAuncienSalaire(double auncienSalaire) {
+		this.auncienSalaire = auncienSalaire;
+	}
+	public double getNouveuaSalaire() {
+		return nouveuaSalaire;
+	}
+	public void setNouveuaSalaire(double nouveuaSalaire) {
+		this.nouveuaSalaire = nouveuaSalaire;
+	}
+	
+}

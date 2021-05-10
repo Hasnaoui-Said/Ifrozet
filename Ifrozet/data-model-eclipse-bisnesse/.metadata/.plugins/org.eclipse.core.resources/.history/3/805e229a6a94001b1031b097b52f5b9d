@@ -1,0 +1,11 @@
+package com.gestionhotel.sejour.vo;
+
+import org.springframework.stereotype.Service;
+
+import com.gestionhotel.sejour.bean.Secteur;
+
+@Service
+public interface SecteurServiceVo  {
+
+	public int save(Secteur secteur);
+}

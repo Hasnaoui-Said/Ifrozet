@@ -1,0 +1,15 @@
+package com.gestionhotel.sejour.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.gestionhotel.sejour.bean.Secteur;
+import com.gestionhotel.sejour.bean.SecteurQuartier;
+
+@Repository
+public interface SecteurQuartierDao extends JpaRepository<SecteurQuartier,Long>{
+	
+	
+	
+	
+}

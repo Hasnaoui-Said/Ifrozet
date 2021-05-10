@@ -1,0 +1,27 @@
+package demoMe;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class ArrayToString {
+	public static void main(String[] args) {
+		String st="bonjour \n monsieur \n  je suis \n desole ";
+		
+		List<String> list = new ArrayList<String>();
+		System.out.println(st);
+		String s = st.replace("\n", ",");
+		System.out.println(s);
+		String  string_email_data = s.replace(" ","");
+		System.out.println(string_email_data);
+		Collections.addAll(list , string_email_data.split(","));
+		System.out.println(list);
+		String stri="";
+		for (String se : list) {
+			stri+=se;
+		}
+
+		System.out.println(stri);
+		
+	}
+}

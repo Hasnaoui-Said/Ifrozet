@@ -1,0 +1,78 @@
+ package com.example.projet.ws;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.projet.bean.Commande;
+import com.example.projet.service.CommandeService;
+
+@RestController
+@RequestMapping("stock-api/commande")
+
+public class SecteurQuartierWs { 
+
+	/*find search=> get,save=> post, update=> put,supp=>delete , 
+	lein @PathVariable , entity=object @RequestBody*/
+	
+	@Autowired
+	private CommandeService commandeService;
+
+	@DeleteMapping("/ref/{ref}")
+	public int deleteByRef(@PathVariable String ref) {
+		return commandeService.deleteByRef(ref);
+	}
+
+	@PutMapping("/paye/{ref}/montant/{mt}")
+	public int payer(@PathVariable String ref,@PathVariable double mt) {
+		return commandeService.payer(ref, mt);
+	}
+
+	//findby deleteby ubdate save
+	//se-connecter/login/{pass/}
+	@PostMapping("/")
+	public int save(@RequestBody Commande commande) {
+		return commandeService.save(commande);
+	}
+
+	@GetMapping("/")
+	public List<Commande> findAll() {
+		return commandeService.findAll();
+	}
+	
+	@GetMapping("/ref/{ref}")
+	public Commande findByRef(@PathVariable String ref) {
+		return commandeService.findByRef(ref); 
+	}
+
+	@GetMapping("/total/{total}")
+	public List<Commande> findBytotal(@PathVariable double total) {
+		return commandeService.findBytotal(total);
+	}
+
+	@GetMapping("/id/{id}")
+	public Commande getOne(@PathVariable long id) {
+		return commandeService.getOne(id);
+	}
+
+	public int hashCode() {
+		return commandeService.hashCode();
+	}
+
+	public boolean equals(Object obj) {
+		return commandeService.equals(obj);
+	}
+
+	public String toString() {
+		return commandeService.toString();
+	}
+
+}

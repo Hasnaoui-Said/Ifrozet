@@ -1,0 +1,57 @@
+package com.gestionhotel.sejour.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.gestionhotel.sejour.bean.Categorie;
+import com.gestionhotel.sejour.bean.Locale;
+import com.gestionhotel.sejour.bean.Quarties;
+import com.gestionhotel.sejour.bean.Redevable;
+import com.gestionhotel.sejour.dao.LocaleDao;
+import com.gestionhotel.sejour.dao.QuartiesDao;
+
+@Service
+public class QuartiesSevice {
+
+	@Autowired
+	private SecteurService secteurService;
+	@Autowired
+	private QuartiesDao quartiesDao;
+	
+
+	public int deleteByReference(String ref) {
+		quartiesDao.deleteByReference(ref);
+		return 1 ;
+	}
+    
+
+
+	public List<Quarties> findBySecteurReference(String reference) {
+		return quartiesDao.findBySecteurReference(reference);
+	}
+
+	public Quarties findByReference(String ref) {
+		return quartiesDao.findByReference(ref);
+	}
+
+	public int save(Quarties quarties) {
+		Quarties isExit = findByReference(quarties.getReference());
+		Redevable redevable = redevableservice.findByRef(locale.getRedevable().getRef()) ;
+		Categorie categorie = categorieservice.find(locale.getCategorie().getRef()) ;;
+		
+		if(monlocale != null) {
+			return -1;
+		}
+		if (redevable != null && categorie != null) {
+			locale.setRedevable(redevable);
+			locale.setCategorie(categorie);
+			localeDao.save(locale);
+			return 1;
+		}
+		else 
+			return -2;
+		
+	}
+}

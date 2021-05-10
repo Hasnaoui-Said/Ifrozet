@@ -1,0 +1,14 @@
+package fr.premiereTp.tp1.Dao;
+
+import java.util.List;
+
+import fr.premiereTp.tp1.bean.Commande;
+
+public interface CommandeService {
+	public Commande findbyRef(String ref);
+	
+	public void save(Commande commande);
+	
+	public List<Commande> findByAll();
+	
+}

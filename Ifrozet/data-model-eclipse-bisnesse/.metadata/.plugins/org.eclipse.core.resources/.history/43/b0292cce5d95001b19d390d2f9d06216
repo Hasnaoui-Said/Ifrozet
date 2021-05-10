@@ -1,0 +1,59 @@
+package com.example.projet.service;
+
+import java.util.List;
+import java.util.Locale;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.projet.bean.Quartier;
+import com.example.projet.bean.Secteur;
+import com.example.projet.dao.QuartierDao;
+import com.example.projet.vo.QuartierServiceVo;
+
+@Service
+public class QuartierService {
+
+	
+	@Autowired
+	private QuartierDao quartierDao;
+	@Autowired
+	private SecteurService secteurService;
+	@Autowired
+	private QuartierService quartierService;
+
+	@Transactional
+	public int deleteByReference(String reference) {
+		return quartierDao.deleteByReference(reference);
+	}
+	
+	public Quartier findByReference(String quartier) {
+		return quartierDao.findByReference(quartier);
+	}
+
+	public int save(Quartier quartier) {
+		Secteur isExitSecteur = secteurService.findByReference(quartier.getSecteur().getReference());
+		if(isExitSecteur == null) {
+			return -1;
+		}
+		else {
+			List<Locale> loc = quartier.getLocales();
+			quartier.setSecteur(isExitSecteur);
+			quartierDao.save(quartier);
+			localeService.save(quartier, loc);
+			return 1;
+		}
+
+	}
+
+	public Quartier getOne(Long id) {
+		return quartierDao.getOne(id);
+	}
+	
+	
+
+	
+
+}

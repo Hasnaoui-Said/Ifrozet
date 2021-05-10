@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1613387027426_0" label="Java Main Sources" name="Java Main Sources"/>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1613387027561_1" label="Java Test Sources" name="Java Test Sources"/>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1614461170421_4" label="LocaleDao" name="LocaleDao">
+<item elementID="=TaxeSejour/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.projet1.Dao{LocaleDao.java" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1614461270550_5" label="LocaleDaao" name="LocaleDaao">
+<item elementID="=TaxeSejour/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.projet1.Dao{LocaleDao.java" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1614462651236_6" label="LocaleDhhhhhhhhhhh" name="LocaleDhhhhhhhhhhh">
+<item elementID="=TaxeSejour/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.projet1.Dao{LocaleDao.java" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1614462894117_7" label="LocaleDao.java" name="LocaleDao.java">
+<item elementID="=TaxeSejour/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.projet1.Dao{LocaleDao.java" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1614463747700_8" label="LocaleDaokh" name="LocaleDaokh">
+<item elementID="=TaxeSejour/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.projet1.Dao{LocaleDao.java" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1613387031475_2" label="Window Working Set" name="Aggregate for window 1613387031475"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1613393552244_3" label="Window Working Set" name="Aggregate for window 1613393552244"/>
+<mruList name="LocaleDaokh"/>
+<mruList name="LocaleDao.java"/>
+<mruList name="LocaleDhhhhhhhhhhh"/>
+<mruList name="LocaleDaao"/>
+<mruList name="LocaleDao"/>
+</workingSetManager>

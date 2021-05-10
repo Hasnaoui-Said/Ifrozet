@@ -1,0 +1,60 @@
+package com.example.projet.bean;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
+@Entity
+public class Echelon {
+
+	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
+	private long id;
+	private String reference;
+	private long numero;
+	private double montant;
+	@OneToMany
+	private Echelle echelle;
+	@OneToOne
+	private Echelon echelleSuivant;
+	
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public String getReference() {
+		return reference;
+	}
+	public void setReference(String reference) {
+		this.reference = reference;
+	}
+	public long getNumero() {
+		return numero;
+	}
+	public void setNumero(long numero) {
+		this.numero = numero;
+	}
+	public double getMontant() {
+		return montant;
+	}
+	public void setMontant(double montant) {
+		this.montant = montant;
+	}
+	public Echelle getEchelle() {
+		return echelle;
+	}
+	public void setEchelle(Echelle echelle) {
+		this.echelle = echelle;
+	}
+	public Echelon getEchelleSuivant() {
+		return echelleSuivant;
+	}
+	public void setEchelleSuivant(Echelon echelleSuivant) {
+		this.echelleSuivant = echelleSuivant;
+	}
+	
+}

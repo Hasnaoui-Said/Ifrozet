@@ -1,0 +1,17 @@
+package fr.premiereTp.tp1.Dao;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import fr.premiereTp.tp1.bean.Commande;
+
+@Service
+public interface CommandeService {
+	public Commande findbyRef(String ref);
+	
+	public void save(Commande commande);
+	
+	public List<Commande> findByAll();
+	
+}
